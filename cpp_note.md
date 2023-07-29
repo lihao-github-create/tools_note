@@ -136,8 +136,82 @@ int result = x + 10; // x被替换为5
 - 被multable修饰的变量可以摆脱const成员函数的限制，对其进行修改。
 - multable关键字只能修饰非静态成员变量，不能修饰函数、静态成员变量等。
 
+### volatile
+
+### enum与enum class
+
+- enum中的成员是全局可见的，存在污染外部作用域的问题。
+
+- enum class中的成员作用域局限于类内，而且可以定义enum class的类型，比如int，short等。
+
 ## 面向对象编程
 
+### 面向对象的三大特性
+
+#### 封装
+
+#### 继承
+
+#### 运行时多态
+
 ## 现代C++
+
+### 智能指针
+
+#### unique_ptr
+
+#### shared_ptr
+
+#### weak_ptr
+
+## STL container
+
+这里主要介绍STL容器的基本原理、使用技巧以及注意事项。
+
+### vector
+
+#### 为什么不建议使用`vector<bool>`
+
+#### reserve和resize
+
+- reserve改变的是vector的capabilty，而非size
+- resize既改变vector的capability，也改变size
+
+#### 迭代器失效
+
+##### 原因
+
+在插入元素时，vector可能会发生内存的重新分配，原内存中的元素会赋值或移动到新内存。这将使原来的迭代器失效，比如尾迭代器。
+
+##### 解决方案
+
+重新获取失效的迭代器，尤其是尾迭代器。
+
+### list
+
+#### list.remove和alogrithm.remove
+
+之所以提这两个函数呢，是因为list的remove接口特别sb。它的含义和algorithm中remove函数的含义
+有所不同：
+
+- list.remove它的作用是删除值为val的元素，它会将节点从list中移除，改变list的size。
+- algorithm.remove的作用和list.remove相同，但是它不会将节点从list中移除，不会改变list的size。
+
+### deque
+
+### map vs. set
+
+之所以放在一起，是因为其底层数据结构是一样的。
+
+#### 为什么只需重载小于运算符就可以实现自定义类作为key
+
+因为a == b可以通过(a < b) && !(b < a)来实现。这样一来可以减少对自定义类的要求。
+
+### unordered_map vs. unordered_set
+
+#### 自定义类作为key
+
+- 提供重载相等运算符
+- 提供hash函数
 
 ## 对象模型
