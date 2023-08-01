@@ -152,7 +152,15 @@ int result = x + 10; // x被替换为5
 
 #### 继承
 
-#### 运行时多态
+#### 多态
+
+### 函数重载
+
+### 运算符重载
+
+讲述哪些运算符可以重载，哪些不可以重载
+哪些运算符只能是成员函数或非成员函数
+匹配规则：通用函数匹配规则。但是有一点，在表达式中，无法根据调用形式判断是使用成员函数还是非成员函数。因为它们均在候选集中。
 
 ## 现代C++
 
@@ -191,8 +199,7 @@ int result = x + 10; // x被替换为5
 
 #### list.remove和alogrithm.remove
 
-之所以提这两个函数呢，是因为list的remove接口特别sb。它的含义和algorithm中remove函数的含义
-有所不同：
+之所以提这两个函数呢，是因为list的remove接口特别sb。它的含义和algorithm中remove函数的含义有所不同：
 
 - list.remove它的作用是删除值为val的元素，它会将节点从list中移除，改变list的size。
 - algorithm.remove的作用和list.remove相同，但是它不会将节点从list中移除，不会改变list的size。
@@ -215,3 +222,5 @@ int result = x + 10; // x被替换为5
 - 提供hash函数
 
 ## 对象模型
+
+## 模板
